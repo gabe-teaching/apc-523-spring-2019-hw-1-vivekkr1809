@@ -1,0 +1,43 @@
+\section{Recurrence in reverse}
+\begin{enumerate}[(a)]
+	\item The reverse recurrence relation is given by:
+			\begin{align*}
+				y_{n-1} = \frac{e - y_{n}}{n}
+			\end{align*}
+		Computing for a few terms down the chain we obtain:
+			\begin{align*}
+				y_{n-2} &= 	\frac{e - y_{n-1}}{n-1}\\
+						&= 	\frac{ne - e + y_n}{n\br{n-1}}\\
+				y_{n-3}	&=	\frac{e - y_{n-2}}{n-2}\\
+						&=	\frac{n\br{n-1}e -ne + e- y_n}{n\br{n-1}\br{n-2}}
+			\end{align*}
+		One can denote the pattern as:
+			\begin{align*}
+				y_{n-p} = (-1)^{p} \frac{y_n}{n\br{n-1}\br{n-2}\dots\br{n-p+1}} + e &\left[\frac{1}{n-\br{p-1}} - \frac{1}{\br{n-\br{p-1}}\br{n-\br{p-2}}}\right.\\
+																					&+ \left.\frac{1}{\br{n-\br{p-1}}\br{n-\br{p-2}}\br{n-\br{p-3}}} + \dots \right]
+			\end{align*}
+		To obtain the value of $y_k$ in terms of $y_N$ we replace $n-p$ with $k$ and simplify:
+			\begin{align*}
+				y_k &= (-1)^{n-k} \frac{y_n}{n\br{n-1}\br{n-2}\dots\br{k+1}} + \mt{exponent \ terms}\\
+					&=(-1)^{n-k} \frac{y_n k!}{n!} + \mt{exponent \ terms}
+			\end{align*}
+			The condition number is given as:
+			\begin{align*}
+				\br{\mt{cond} \ g_k}\br{y_k} 	&= \left|\frac{y_N g'\br{y_N}}{y_k}\right| \\
+												&= \left|\frac{y_N \frac{k!}{N!}}{y_k}\right|
+			\end{align*}
+			Since the $k$ is less than $N$, $y_k$ is greater than $y_N$, the upper bound on the condition number, $\br{\mt{cond} \ g_k}\br{y_k}$, obtained as:
+			\begin{align*}
+				\br{\mt{cond} \ g_k}\br{y_k} \leq \frac{k!}{N!}
+			\end{align*}
+			as $\frac{y_N}{y_k} \leq 1$
+	\item We know the condition number represents:
+			\begin{align*}
+				\varepsilon_y &= \br{\mt{cond} \ g_k} \varepsilon_x \\
+				\frac{\Delta y_k}{y_k} &\leq \frac{k!}{N!} \quad \leq \varepsilon\\
+				N! &\geq \frac{k!}{\varepsilon}
+			\end{align*}
+			Here, we have assumed $\varepsilon_x = 1$ and $\varepsilon$ is a predefined target error in $y_k$.
+	\item For \py{python3} the machine epsilon for float is $1.0e^{-15}$(Obtained using numpy.finfo(float)). Using this machine epsilon the value of $N$ obtained is 31. [Check code]
+	\item The computed value of $y_{20}$ is $0.123803830762570$ and the value of $y_{20}$ directly by integration is $0.123803830762570$. [Check code]
+\end{enumerate}
