@@ -1,3 +1,8 @@
+"""
+This is the accompanyng code for HW 1 for APC 523 along with the includes
+Author(s): Vivek Kumar
+Last Updated: 13th March 2019
+"""
 import numpy as np
 import sympy as sp
 import matplotlib as mpl
