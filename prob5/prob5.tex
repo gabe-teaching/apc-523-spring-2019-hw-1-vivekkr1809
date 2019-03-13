@@ -30,4 +30,4 @@
 		\end{tabular}
 	\end{table}
 \end{enumerate}
-The reason why it converges to that value is that the term $\frac{1}{n}$ gets ignored when n reaches $10^{16}$ as the machine epsilon for floating point in python3 is $\approx 10^{-17}$ (This can be tested by computing $0.1+0.1+0.1-0.3$).
+The reason why it converges to that value is that the term $\frac{1}{n}$ gets ignored when n reaches $10^{16}$ as the machine epsilon for floating point in python3 is $\approx 10^{-15}$ (Obtained using numpy.finfo(float)).
