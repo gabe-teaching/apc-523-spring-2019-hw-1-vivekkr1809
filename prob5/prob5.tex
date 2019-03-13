@@ -1,0 +1,33 @@
+\section{Limits in $\Rbb\left(p,q\right)$}
+
+\begin{enumerate}[(a)]
+	\item The code stopped at $n = 10^{17}$
+	\item The final converged value is $1.0$
+	\item A table of the intermediate values computed for $0 \leq n \leq n_{\mt{stop}}$
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{c|c}
+		n 	& value \\
+		\hline
+		1.0E+00 & 2.0000000000000 \\
+		1.0E+01 & 2.5937424601000 \\
+		1.0E+02 & 2.7048138294215 \\
+		1.0E+03 & 2.7169239322356 \\
+		1.0E+04 & 2.7181459268249 \\
+		1.0E+05 & 2.7182682371923 \\
+		1.0E+06 & 2.7182804690958 \\
+		1.0E+07 & 2.7182816941321 \\
+		1.0E+08 & 2.7182817983474 \\
+		1.0E+09 & 2.7182820520116 \\
+		1.0E+10 & 2.7182820532348 \\
+		1.0E+11 & 2.7182820533571 \\
+		1.0E+12 & 2.7185234960372 \\
+		1.0E+13 & 2.7161100340869 \\
+		1.0E+14 & 2.7161100340870 \\
+		1.0E+15 & 3.0350352065493 \\
+		1.0E+16 & 1.0000000000000 \\
+		1.0E+17 & 1.0000000000000 		
+		\end{tabular}
+	\end{table}
+\end{enumerate}
+The reason why it converges to that value is that the term $\frac{1}{n}$ gets ignored when n reaches $10^{16}$ as the machine epsilon for floating point in python3 is $\approx 10^{-17}$ (This can be tested by computing $0.1+0.1+0.1-0.3$).

@@ -13,12 +13,19 @@ from decimal import *
 import scipy.optimize
 # Import the solutions
 from prob2.prob2 import problem_2
+from prob5.prob5 import problem_5
+from prob6.prob6 import problem_6
+from prob7.prob7 import problem_7
 from prob8.prob8 import problem_8
 
 def main():
 	print('#################')
 	print('Solving Problem 2')
 	problem_2()
+	print('\n')
+	print('#################')
+	print('Solving Problem 5')
+	problem_5()
 	print('\n')
 	print('#################')
 	print('Solving Problem 7')

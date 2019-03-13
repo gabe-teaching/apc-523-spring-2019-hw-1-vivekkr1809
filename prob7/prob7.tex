@@ -1,0 +1,48 @@
+\section{The issue with polynomial roots}
+\begin{enumerate}[(a)]
+	\item The coefficients of the polynomial are:
+		\begin{table}[H]
+			\centering
+			\begin{tabular}{r|r}
+			$n$ & $a_n$\\
+			\hline
+			0	&	2432902008176640000 \\		
+			1	&	-8752948036761600000 \\
+			2	&	13803759753640704000 \\
+			3	&	-12870931245150988800 \\
+			4	&	8037811822645051776 \\
+			5	&	-3599979517947607200 \\
+			6	&	1206647803780373360\\
+			7	&	-311333643161390640\\
+			8	&	63030812099294896\\
+			9	&	-10142299865511450\\
+			10	&	1307535010540395\\
+			11	&	-135585182899530\\
+			12	&	11310276995381\\
+			13	&	-756111184500\\
+			14	&	40171771630\\
+			15	&	-1672280820\\
+			16	&	53327946\\
+			17	&	-1256850\\
+			18	&	20615\\
+			19	&	-210\\
+			20	&	1
+			\end{tabular}
+		\end{table}
+	\item Yes, The newton raphson method converges to $20.00003189$ when the initial guess of $21$ is provided.\\
+			Using the inbuilt function the largest root obtained is $20.00054209$, which is pretty much the same.Further various complex roots are calculated using the inbuilt function
+	\item Changing the coefficient $a_{20}$ from $1 \rightarrow 1+\delta$
+		\begin{table}[H]
+			\centering
+			\begin{tabular}{c|c|c}
+				$\delta$ 	& Largest root using NR & Largest root using inbuilt function \\
+				\hline
+				$10^{-8}$	& $9.5854$ 	& 	$20.648+1.1869j$\\
+				$10^{-6}$	& $7.7527$	&	$23.149 +2.7410j$\\
+				$10^{-4}$	& $5.9693$	&	$28.400 +6.5104j$\\
+				$10^{-2}$	& $5.4696$	&	$38.478 +20.834j$
+			\end{tabular}
+		\end{table}
+	\item Changing the value of coefficient $a_{19}$ from $-210 \rightarrow -210-2^{-23}$
+	\item Consider a monic degree-$n$ polynomial
+\end{enumerate}

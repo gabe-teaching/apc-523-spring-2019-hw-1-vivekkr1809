@@ -66,148 +66,17 @@ pdfmenubar=true
 \newpage
 \input{prob2/prob2.tex}
 \newpage
+\input{prob3/prob3.tex}
+\newpage
+\input{prob4/prob4.tex}
+\newpage
+\input{prob5/prob5.tex}
+\newpage
+\input{prob6/prob6.tex}
+\newpage
+\input{prob7/prob7.tex}
+\newpage
 \input{prob8/prob8.tex}
-%
-%\section{Error propagation in exponentiation}
-%\begin{enumerate}[(a)]
-%	\item Derive the upper bound on relative error resulting from machine arithmetic for the two different algorithms
-%		\begin{enumerate}[(i)]
-%			\item Multiplying x's one we get:
-%				\begin{align*}
-%					\mt{fl}\left(x \times x\right) = x^2 (1+\epsilon)
-%				\end{align*}
-%				By induction, the relative error in computing $x^n$ by repeated multiplication is $\left(1+\epsilon\right)^{n-1}$. If we neglect any terms of type $\Oc\left(\mt{eps}^2\right)$ and higher the error can be written as:
-%				\begin{align*}
-%				\mt{Relative \ Error} = \br{n-1}\epsilon
-%				\end{align*}
-%			
-%			\item Using exponentiation:
-%				\begin{align*}
-%					\mt{fl}\br{e^{\mt{fl}\br{n\br{\mt{fl}\br{\mt{ln}x}}}}}	&= \mt{fl}\br{e^{\mt{fl}\br{n\br{\mt{ln}x\br{1+\epsilon_l}}}}}\\
-%																			&= \mt{fl}\br{e^{n \mt{ln}x \br{1+\epsilon_l+\epsilon_n}}}\\
-%																			&= e^{n \mt{ln}x \br{1+\epsilon_l+\epsilon_n}}\br{1+\epsilon_{\mt{exp}}}\\
-%																			&= x^{n\br{1+\epsilon_l+\epsilon_n}}\br{1+\epsilon_{\mt{exp}}}\\
-%																			&= x^n\br{x^{n\br{\epsilon_l+\epsilon_n}}\br{1+\epsilon_{\mt{exp}}}}
-%				\end{align*}
-%		\end{enumerate}
-%	\item Suppose $x$ is positive and $a$ is nonzero. Determine the propagated relative error $\epsilon$ in $x^a$ when:
-%		\begin{enumerate}[(i)]
-%			\item $x$ is an exact machine number  but $a$ is subject to a relative error $\epsilon_a$
-%				
-%			\item $a$ is an exact machine number  but $x$ is subject to a relative error $\epsilon_x$
-%		\end{enumerate}
-%		NOTE: Since $a$ is an arbitrary positive number we only focus on the exponentiation method
-%\end{enumerate}
-%
-%\section{Conditioning}
-%Consider the function
-%	\begin{align*}
-%		f(x) = 1 - e^{-x}
-%	\end{align*}
-%\begin{enumerate}[(a)]
-%	\item The condition (cond $f$)($x$) of the function in terms of x is given as:\\
-%			\begin{align*}
-%			(\mt{cond \ } f)(x)	&= \left|x \frac{f'(x)}{f(x)}\right|\\
-%								&= \left|x \frac{e^{-x}}{1-e^{-x}}\right|\\
-%								&= \left|\frac{x}{e^x -1}\right|
-%			\end{align*}
-%		The function $\frac{x}{e^x -1}$ is a monotonically decreasing function between $\left[0,1\right]$ with values being $1$ at $0$ and $0.58$ at $1$. Hence the problem is well conditioned on this interval
-%	\item 
-%\end{enumerate}
-%
-%\section{Limits in $\Rbb\left(p,q\right)$}
-%
-%\begin{enumerate}[(a)]
-%	\item The code stopped at $n = 10^{17}$
-%	\item The final converged value is $1.0$
-%	\item A table of the intermediate values computed for $0 \leq n \leq n_{\mt{stop}}$
-%	\begin{table}[H]
-%		\centering
-%		\begin{tabular}{c|c}
-%		n 	& value \\
-%		\hline
-%		1.0E+00 & 2.0000000000000 \\
-%		1.0E+01 & 2.5937424601000 \\
-%		1.0E+02 & 2.7048138294215 \\
-%		1.0E+03 & 2.7169239322356 \\
-%		1.0E+04 & 2.7181459268249 \\
-%		1.0E+05 & 2.7182682371923 \\
-%		1.0E+06 & 2.7182804690958 \\
-%		1.0E+07 & 2.7182816941321 \\
-%		1.0E+08 & 2.7182817983474 \\
-%		1.0E+09 & 2.7182820520116 \\
-%		1.0E+10 & 2.7182820532348 \\
-%		1.0E+11 & 2.7182820533571 \\
-%		1.0E+12 & 2.7185234960372 \\
-%		1.0E+13 & 2.7161100340869 \\
-%		1.0E+14 & 2.7161100340870 \\
-%		1.0E+15 & 3.0350352065493 \\
-%		1.0E+16 & 1.0000000000000 \\
-%		1.0E+17 & 1.0000000000000 		
-%		\end{tabular}
-%	\end{table}
-%\end{enumerate}
-%The reason why it converges to that value is that the term $\frac{1}{n}$ gets ignored when n reaches $10^{16}$ as the machine epsilon for floating point in python3 is $\approx 10^{-17}$ (This can be tested by computing $0.1+0.1+0.1-0.3$).
-%\section{Fun with square roots}
-%\begin{figure}[H]
-%	\begin{center}
-%		\begin{tabular}{c c} %% tabular useful for creating an array of images 
-%			\includegraphics[width=0.45\textwidth]{plot_for_n_49} & \includegraphics[width=0.45\textwidth]{plot_for_n_50} \\
-%			\includegraphics[width=0.45\textwidth]{plot_for_n_51} & \includegraphics[width=0.45\textwidth]{plot_for_n_52}
-%		\end{tabular}
-%	\end{center}
-%	\caption[funwithsquareroots] 
-%	%>>>> use \label inside caption to get Fig. number with \ref{}
-%	{ Plots for different values of $n$}
-%\end{figure}
-%\section{The issue with polynomial roots}
-%\begin{enumerate}[(a)]
-%	\item The coefficients of the polynomial are:
-%		\begin{table}[H]
-%			\centering
-%			\begin{tabular}{r|r}
-%			$n$ & $a_n$\\
-%			\hline
-%			0	&	2432902008176640000 \\		
-%			1	&	-8752948036761600000 \\
-%			2	&	13803759753640704000 \\
-%			3	&	-12870931245150988800 \\
-%			4	&	8037811822645051776 \\
-%			5	&	-3599979517947607200 \\
-%			6	&	1206647803780373360\\
-%			7	&	-311333643161390640\\
-%			8	&	63030812099294896\\
-%			9	&	-10142299865511450\\
-%			10	&	1307535010540395\\
-%			11	&	-135585182899530\\
-%			12	&	11310276995381\\
-%			13	&	-756111184500\\
-%			14	&	40171771630\\
-%			15	&	-1672280820\\
-%			16	&	53327946\\
-%			17	&	-1256850\\
-%			18	&	20615\\
-%			19	&	-210\\
-%			20	&	1
-%			\end{tabular}
-%		\end{table}
-%	\item Yes, The newton raphson method converges to $20.00003189$ when the initial guess of $21$ is provided.\\
-%			Using the inbuilt function the largest root obtained is $20.00054209$, which is pretty much the same.Further various complex roots are calculated using the inbuilt function
-%	\item Changing the coefficient $a_{20}$ from $1 \rightarrow 1+\delta$
-%		\begin{table}[H]
-%			\centering
-%			\begin{tabular}{c|c|c}
-%				$\delta$ 	& Largest root using NR & Largest root using inbuilt function \\
-%				\hline
-%				$10^{-8}$	& $9.5854$ 	& 	$20.648+1.1869j$\\
-%				$10^{-6}$	& $7.7527$	&	$23.149 +2.7410j$\\
-%				$10^{-4}$	& $5.9693$	&	$28.400 +6.5104j$\\
-%				$10^{-2}$	& $5.4696$	&	$38.478 +20.834j$
-%			\end{tabular}
-%		\end{table}
-%	\item Changing the value of coefficient $a_{19}$ from $-210 \rightarrow -210-2^{-23}$
-%	\item Consider a monic degree-$n$ polynomial
-%\end{enumerate}
 
 
 

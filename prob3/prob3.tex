@@ -1,0 +1,31 @@
+\section{Error propagation in exponentiation}
+\begin{enumerate}[(a)]
+	\item Derive the upper bound on relative error resulting from machine arithmetic for the two different algorithms
+		\begin{enumerate}[(i)]
+			\item Multiplying x's one we get:
+				\begin{align*}
+					\mt{fl}\left(x \times x\right) = x^2 (1+\epsilon)
+				\end{align*}
+				By induction, the relative error in computing $x^n$ by repeated multiplication is $\left(1+\epsilon\right)^{n-1}$. If we neglect any terms of type $\Oc\left(\mt{eps}^2\right)$ and higher the error can be written as:
+				\begin{align*}
+				\mt{Relative \ Error} = \br{n-1}\epsilon
+				\end{align*}
+			
+			\item Using exponentiation:
+				\begin{align*}
+					\mt{fl}\br{e^{\mt{fl}\br{n\br{\mt{fl}\br{\mt{ln}x}}}}}	&= \mt{fl}\br{e^{\mt{fl}\br{n\br{\mt{ln}x\br{1+\epsilon_l}}}}}\\
+																			&= \mt{fl}\br{e^{n \mt{ln}x \br{1+\epsilon_l+\epsilon_n}}}\\
+																			&= e^{n \mt{ln}x \br{1+\epsilon_l+\epsilon_n}}\br{1+\epsilon_{\mt{exp}}}\\
+																			&= x^{n\br{1+\epsilon_l+\epsilon_n}}\br{1+\epsilon_{\mt{exp}}}\\
+																			&= x^n\br{x^{n\br{\epsilon_l+\epsilon_n}}\br{1+\epsilon_{\mt{exp}}}}
+				\end{align*}
+		\end{enumerate}
+	\item Suppose $x$ is positive and $a$ is nonzero. Determine the propagated relative error $\epsilon$ in $x^a$ when:
+		\begin{enumerate}[(i)]
+			\item $x$ is an exact machine number  but $a$ is subject to a relative error $\epsilon_a$
+				
+			\item $a$ is an exact machine number  but $x$ is subject to a relative error $\epsilon_x$
+		\end{enumerate}
+		NOTE: Since $a$ is an arbitrary positive number we only focus on the exponentiation method
+\end{enumerate}
+

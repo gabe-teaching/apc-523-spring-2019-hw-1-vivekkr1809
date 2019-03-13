@@ -1,0 +1,15 @@
+\section{Conditioning}
+Consider the function
+	\begin{align*}
+		f(x) = 1 - e^{-x}
+	\end{align*}
+\begin{enumerate}[(a)]
+	\item The condition (cond $f$)($x$) of the function in terms of x is given as:\\
+			\begin{align*}
+			(\mt{cond \ } f)(x)	&= \left|x \frac{f'(x)}{f(x)}\right|\\
+								&= \left|x \frac{e^{-x}}{1-e^{-x}}\right|\\
+								&= \left|\frac{x}{e^x -1}\right|
+			\end{align*}
+		The function $\frac{x}{e^x -1}$ is a monotonically decreasing function between $\left[0,1\right]$ with values being $1$ at $0$ and $0.58$ at $1$. Hence the problem is well conditioned on this interval
+	\item 
+\end{enumerate}
