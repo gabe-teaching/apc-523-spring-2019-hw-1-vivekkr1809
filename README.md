@@ -12,6 +12,6 @@ If you wrote a single PDF, you can save it in the top-level directory of the rep
 
 There's a subfolder associated with each problem (each folder currently has an empty .gitignore folder --- that was just my hack to be able to give you a skeleton folder structure, since git doesn't allow empty folders to be committed into a repo).  Put any additional material you used to solve each problem into its corresponding folder.  That includes code to calculate stuff, plots you made, the code to make those plots, etc etc.
 
-Once your stuff is saved in these folders, just commit your changes and push your changes back to github (i.e. to your own personalized fork of the HWK1 repo).  That's it. If all goes well, the Github Classroom infrastructure should allowe me and the AIs to bulk clone/pull all your repos at once and have access to your work.
+Once your stuff is saved in these folders, just commit your changes and push your changes back to github (i.e. to your own personalized fork of the HWK1 repo. Just leave it there.).  That's it. If all goes well, the Github Classroom infrastructure should allowe me and the AIs to bulk clone/pull all your repos at once and have access to your work.
 
 If there are any questions/issues, please post to Piazza and/or email me (try Piazza first).
