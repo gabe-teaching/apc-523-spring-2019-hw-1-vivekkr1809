@@ -1,0 +1,38 @@
+\section{Error in (symmetric) rounding vs chopping}
+\textbf{Assertion}: When mapping a real number $x$ to a nearby machine number in $\Rbb(p,q)$, the upper bound in the relative error for symmetric rounding is:
+	\begin{align*}
+		\left|\frac{x-\mt{rd}(x)}{x}\right|\leq 2^{-p}
+	\end{align*}
+\textbf{Proof:}\\
+Consider the number $x$ to be represented as:
+	\begin{align*}
+		x = \pm \left(\sum_{l=1}^{\infty} b_{-l}2^{-l}\right)2^e
+	\end{align*}
+If the number is to be rounded to $p$ terms, two cases arise:
+	\begin{itemize}
+	\item[] \textbf{CASE I.} The $(p+1)^{\mt{th}}$ is 0.\\
+	In this scenario the difference between the true value and the rounded value is given by:
+			\begin{align*}
+				x - \mt{rd}(x) = \pm\left(\sum_{l=p+2}^{\infty} b_{-l}2^{-l}\right)2^e
+			\end{align*}
+			The maximum relative error can then be computed as:
+			\begin{align*}
+				\mt{max}\left|\frac{x-\mt{rd}(x)}{x}\right| 	&= \frac{\mt{max}\left|x-\mt{rd}(x)\right|}{\mt{min}\left|x\right|}\\
+																&= \frac{2^{-p-1}2^e}{2^{-1}2^e }\\
+																&= 2^{-p}
+			\end{align*}
+			which is what we set to prove.
+	\item[] \textbf{CASE II.} The $(p+1)^{\mt{th}}$ is 1.\\
+	In this scenario the maximum difference between the true and the rounded value is obtained as:
+			\begin{align*}
+				\mt{max}|x - \mt{rd}(x)| = \left(2^{-p} - 2^{-p-1}\right)2^e
+			\end{align*}
+			This is the case we all the leading terms from $(p+2)$ are $1$. Hence the maximum relative error can be computed as before:
+			\begin{align*}
+				\mt{max}\left|\frac{x-\mt{rd}(x)}{x}\right| 	&= \frac{\mt{max}\left|x-\mt{rd}(x)\right|}{\mt{min}\left|x\right|}\\
+																&= \frac{\left(2^{-p} -2^{-p-1}\right)2^e}{2^{-1}2^e }\\
+																&= 2^{-p}
+			\end{align*}
+			which is what we set to prove
+	\end{itemize}
+	Both the cases show that the maximum symmetric rounding off error is $2^{-p}$
